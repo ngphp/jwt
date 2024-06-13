@@ -1,0 +1,25 @@
+{
+    "name": "ngphp/jwt",
+    "description": "NGPHP/JWT is a simple library to encode and decode JSON Web Tokens (JWT) in PHP. This library is part of the NGPHP framework and was developed by Vedat Yıldırım. It provides methods to generate, validate, and decode JWT tokens, conforming to the current specifications.",
+    "homepage": "https://github.com/ngphp/jwt",
+    "keywords": [
+        "php",
+        "jwt",
+        "json web token"
+    ],
+    "authors": [
+        {
+            "name": "Vedat Yıldırım",
+            "email": "vedatyildirimofficial@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ngphp\\": "src/"
+        }
+    }
+}

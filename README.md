@@ -1,30 +1,37 @@
-# NGJWT
-
-NGJWT is a simple library to encode and decode JSON Web Tokens (JWT) in PHP. This library is part of the LeanPHP framework and was developed by Vedat Yıldırım. It provides methods to generate, validate, and decode JWT tokens, conforming to the current specifications. 
+# JWT
+NGPHP/JWT is a simple library to encode and decode JSON Web Tokens (JWT) in PHP. 
+This library is part of the NGPHP framework and was developed by Vedat Yıldırım. 
+It provides methods to generate, validate, and decode JWT tokens, conforming to the current specifications. 
 
 ## Installation
 
-You can install this package via Composer: https://packagist.org/packages/leanphpio/jwt
+You can install this package via Composer: https://packagist.org/packages/ngphp/jwt
 
 ```bash
-composer install leanphpio/jwt
+composer install ngphp/jwt
 ```
+
+## Example
+
+file: vendor/ngphp/src/example.php
+url: http://localhost/jwt/example.php
+
 
 ## Usage
 
 ### Generating a JWT
 
 ```
-// without composer: require 'NGJWT.php';
+// without composer: require 'JWT.php';
 
 // with composer
 require 'vendor/autoload.php';
 
-use LeanPHP\JWT\NGJWT;
+use ngphp\JWT;
 
 // Initialize the JWT handler with a secret key
 $secret = 'your_secret_key';
-$jwt = new NGJWT($secret);
+$jwt = new JWT($secret);
 
 // Example payload
 $payload = [
@@ -52,7 +59,7 @@ $headers = [
 // Authenticate the user using the token from the headers
 try {
     if ($jwt->authenticate($headers)) {
-        $user = NGJWT::getUser();
+        $user = JWT::getUser();
         echo "Authenticated User: \n";
         print_r($user);
     }
@@ -82,11 +89,11 @@ Here's a more detailed example that demonstrates generating, storing, authentica
 ```
 require 'vendor/autoload.php';
 
-use leanphp\jwt\NGJWT;
+use leanphp\jwt\JWT;
 
 // Initialize the JWT handler with a secret key
 $secret = 'your_secret_key';
-$jwt = new NGJWT($secret);
+$jwt = new JWT($secret);
 
 // Example payload
 $payload = [
@@ -116,7 +123,7 @@ $headers = [
 echo "Authenticating User...\n";
 try {
     if ($jwt->authenticate($headers)) {
-        $user = NGJWT::getUser();
+        $user = JWT::getUser();
         echo "Authenticated User: \n";
         print_r($user);
         echo "\n";
@@ -145,7 +152,7 @@ echo "\n--------------------------\n";
 echo "Example 2: Token Authentication\n";
 try {
     if ($jwt->authenticate($headers)) {
-        $user = NGJWT::getUser();
+        $user = JWT::getUser();
         echo "Authenticated User: \n";
         print_r($user);
         echo "\n";
@@ -177,4 +184,5 @@ Contributing
 If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request on GitHub.
 
 
-This `README.md` provides an overview of the NGJWT library, including installation instructions, usage examples, and detailed explanations of each method. It also includes a complete example demonstrating how to generate, authenticate, and decode JWT tokens. The repository name `php-jwt` is concise and SEO-friendly, making it easier for users to find your project when searching for JWT solutions in PHP.
+This `README.md` provides an overview of the JWT library, including installation instructions, usage examples, and detailed explanations of each method. It also includes a complete example demonstrating how to generate, authenticate, and decode JWT tokens. The repository name `php-jwt` is concise and SEO-friendly, making it easier for users to find your project when searching for JWT solutions in PHP.
+
